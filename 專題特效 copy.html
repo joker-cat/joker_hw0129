@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        /* 利用delay延遲製作邊線呈現方式 */
+        .myboxani {
+            position: relative;
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            border: 1px solid #23234B;
+            transition: 0.5s;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: miller-banner, serif;
+            font-weight: lighter;
+        }
+
+        .myboxani::after {
+            background-color: #23234B;
+            content: '';
+            position: absolute;
+            transition: all 0.1s;
+            transition-delay: 0.1s;
+            top: 6px;
+            right: -6px;
+            height: 100%;
+            width: 1px;
+        }
+
+        .myboxani::before {
+            background-color: #23234B;
+            content: '';
+            position: absolute;
+            transition: all 0.1s;
+            transition-delay: 0.2s;
+            bottom: -6px;
+            height: 1px;
+            right: -6px;
+            width: 100%;
+        }
+
+        .myboxani:hover::before {
+            width: 0;
+            transition-delay: 0.2s;
+        }
+
+        .myboxani:hover::after {
+            height: 0;
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myboxani">0104_button</div>
+</body>
+
+</html>
