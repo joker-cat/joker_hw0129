@@ -127,14 +127,149 @@ nav{
     width: 50px;
     height: 2px;
     background-color: black;
-    margin: 8px 0;
+    margin: 8px 8px;
     transition: 0.5s;
 }
 .burgerLine_cover{
     width: 40px;
     overflow: hidden;
 }
+/* ---------------navOpen-------------- */
+#navOpen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    background-image: url('../05_img/navOpenbgColor.jpg');
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: 1s; 
+}
+.navOpen_left{
+    width: 50%;
+    height: 100%;
+    padding: 40px 0 0 50px;
+}
+.navOpen_left_top{
+    width: 100%;
+    height: 200px;
+}
+.navOpen_left_top > span{
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.navOpen_left_top > img{
+    display: block;
+    width: 230px;
+    margin-top: 20px; 
+    /* 行內推不動區塊 只好用區塊向上頂行內 */
+}
+.navOpen_left_bottom{
+    width: 100%;
+    height: calc(100% - 200px);
+    display: flex;
+}
 
+/*-------------- navOpen_leftBottom_left-------------- */
+.navOpen_leftBottom_left{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+.navOpen_leftBottom_left > ul{
+    list-style-type: none;
+}
+.navOpen_leftBottom_left > ul > li{
+    font-size: 1rem;
+    font-family: kozuka-mincho-pro;
+    letter-spacing: 5px;
+    margin: 35px 0;
+}
+.navOpen_leftBottom_left > div{
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    bottom: 4%;
+}
+.navOpen_leftBottom_left > div > p{
+    margin: 35px 0;
+}
+.navOpen_leftBottom_left > div > p:nth-of-type(1) > span{
+    margin-right: 50px ;
+}
+.navOpen_leftBottom_left > div > p:nth-of-type(2) > span{
+    margin-right: 30px ;
+}
+.navOpen_btn{
+    margin: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    letter-spacing: 4px;
+}
+
+/*-------------- navOpen_leftBottom_right-------------- */
+.navOpen_leftBottom_right{
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid black;
+}
+
+/* -------------------------------------------- */
+.navOpen_right{
+    width: 50%;
+    height: 100%;
+    background-image: url('../05_img/navOpenbg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* -------------------------------------- */
+#burger_in{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    float: right;
+    background-color: rgb(190, 88, 190);
+}
+.burgerLine_cover_in{
+    width: 40px;
+    overflow: hidden;
+}
+.burgerLine_in{
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
+    transition: 0.5s;
+}
+#burger_in.on_off .burgerLine_in:nth-of-type(1){
+    transform-origin: left;
+    transform: rotate(45deg);
+    width: 80%;
+    margin-left: 10px;
+}
+#burger_in.on_off .burgerLine_in:nth-of-type(2){
+    transform: translate(150%);
+    width: 80%;
+}
+#burger_in.on_off .burgerLine_in:nth-of-type(3){
+    transform-origin: left;
+    transform: rotate(-45deg);
+    width: 80%;
+    margin-left: 10px;
+}
+/* -------------sec1----------------- */
 #sec1{
     width: 100%;
     height: calc(100vh - 80px);
@@ -174,10 +309,10 @@ nav{
     position: relative;
 }
 
-/* 點選slider顯示範圍時 不會有邊線出現 */
-.slick-slider{
+/* .slick-slider{
     touch-action:none
-}
+} */
+
 .slick-prev,.slick-next{
     display: none !important;
 }

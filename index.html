@@ -23,7 +23,48 @@
         </div>
     </nav>
     <section id="navOpen">
-        
+        <div class="navOpen_left">
+            <div class="navOpen_left_top">
+                <span>千里金蘭大学 受験生応援サイト</span>
+                <img src="./05_img/kirari.svg" alt="">
+            </div>
+            <div class="navOpen_left_bottom">
+                <div class="navOpen_leftBottom_left">
+                    <ul>
+                        <li>入試情報</li>
+                        <li>オープンキャンパス</li>
+                        <li>いつものキンラン</li>
+                        <li>Let’s Talk!</li>
+                        <li>みんなのQ＆A</li>
+                    </ul>
+                    <div>
+                        <button class="navOpen_btn myboxani">view more</button>
+                        <p>
+                            <span>公式サイト</span>
+                            <span>アクセス</span>
+                        </p>
+                        <p>
+                            <span>follow us</span>
+                            <span><i class="fab fa-twitter"></i></span>
+                            <span><i class="fab fa-facebook-f"></i></span>
+                            <span><i class="fas fa-at"></i></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="navOpen_leftBottom_right">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="navOpen_right">
+            <div id="burger_in" class="on_off">
+                <div class="burgerLine_cover_in">
+                    <span class="burgerLine_in"></span>
+                    <span class="burgerLine_in"></span>
+                    <span class="burgerLine_in"></span>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="sec1">
         <div class="sec1Left_fixed">
@@ -248,21 +289,72 @@
     <script src="./05_js/05_js.js"></script>
     <script>
         const burgerClick = document.querySelector('#burger');
+        const navOpen = document.querySelector('#navOpen');
         const sec1Sliderimgset = document.querySelectorAll('.sec1Slider_imgset')
         const sliderdotbtnset = document.querySelectorAll('.sliderdot_btnset');
         const sec4_sliderdotbtnset = document.querySelectorAll('.sec4_sliderdot_btnset');
         const playlogo = document.querySelector('.play_logo');
+        const burgerin = document.querySelector('#burger_in');
         let movieShow = document.querySelector('.movieShow');
         let ifr = document.querySelector('iframe');
 
+        //宣告全遇變數
+        //先呼叫計時器
+        //先抓小黑點 並給予click事件 ＝>計數器歸零 在呼叫一次計數器
+        //抓取數字對應的圖片 並顯示
+        //把初始化入函式 並把被點的按鈕變黑
+
+
         //如何讓addEventListener內也能使用
         // var aliderArraylength = sliderdotbtnset.length;
-
-        sec1Sliderimgset.forEach((imgclick, index) => {
-            //監控輪播目前索引
-            console.log(imgclick.getAttribute('data-slick-index'));
+        burgerin.addEventListener('click',()=>{
+            burgerClick.classList.toggle('on_off');
+            navOpen.style.opacity = '0';
+            navOpen.style.zIndex = '-1';
         })
 
+        sliderdotbtnset[0].style.backgroundColor = 'black'
+        var tt = function () {
+            setInterval(() => {
+
+                sec1Sliderimgset.forEach((imgclick, index) => {
+                    sliderdotbtnset[index].style.backgroundColor = 'white';
+                    if ($(imgclick).hasClass('slick-active')) {
+                        console.log(index);
+                        sliderdotbtnset[index].style.backgroundColor = 'black';
+                    }
+                })
+            }, 5000);
+        }
+
+
+        sliderdotbtnset.forEach((btnclick, index) => {
+            //按鈕事件
+            btnclick.addEventListener('click', (btn,ii) => {
+                $('.autoplay').slick('slickGoTo', index);
+                for (var a = 0; a <= 4; a++) {
+                    sliderdotbtnset[a].style.backgroundColor = 'white';
+                }
+                sliderdotbtnset[index].style.backgroundColor = 'black';
+                clearTimeout(tt);
+                tt();
+            })
+        })
+        tt();
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //------------------------------------------------
         playlogo.addEventListener(('click'), () => {
             movieShow.style.zIndex = '999'
         })
@@ -273,16 +365,6 @@
             movieShow.style.zIndex = '-1'
         })
 
-        sliderdotbtnset.forEach((btnclick, index) => {
-            //按鈕事件
-            btnclick.addEventListener('click', (btn) => {
-                $('.autoplay').slick('slickGoTo', index);
-                for (var a = 0; a <= 4; a++) {
-                    sliderdotbtnset[a].style.backgroundColor = 'white';
-                }
-                sliderdotbtnset[index].style.backgroundColor = 'black';
-            })
-        })
         sec4_sliderdotbtnset.forEach((btnclick, index) => {
             //按鈕事件
             btnclick.addEventListener('click', (btn) => {
@@ -293,9 +375,11 @@
                 sec4_sliderdotbtnset[index].style.backgroundColor = 'black';
             })
         })
-        
+
         burgerClick.addEventListener('click', () => {
             burgerClick.classList.toggle('on_off');
+            navOpen.style.opacity = '1';
+            navOpen.style.zIndex = '9999';
         })
 
         $('.autoplay').slick({
@@ -318,26 +402,7 @@
             centerMode: true,
         });
     </script>
-    <script>
-          // sec1Slider_imgset.forEach(img =>{
 
-                    //     // img.classList.remove('slick-current');
-                    //     // img.classList.remove('slick-active');
-                    //     // img.style.opacity = '0';
-                    //     // img.style.zIndex = '998';
-                    //     // img.style.ariaHidden = 'true';
-                    //     // img.style.tabindex = '-1';
-                    //     // img.slick('slickGoTo', index);
-                    //     // img.slickGoTo(index);
-                    // })
-
-                    // sec1Slider_imgset[index].classList.add('slick-current');
-                    // sec1Slider_imgset[index].classList.add('slick-active');
-                    // sec1Slider_imgset[index].style.opacity = '1';
-                    // sec1Slider_imgset[index].style.zIndex = '999';
-                    // sec1Slider_imgset[index].style.ariaHidden = 'false';
-                    // sec1Slider_imgset[index].style.tabindex = '0';
-    </script>
 </body>
 
 </html>
