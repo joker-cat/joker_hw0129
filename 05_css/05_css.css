@@ -216,7 +216,18 @@ nav{
     width: 50%;
     height: 100%;
     border-left: 1px solid black;
+    padding: 0 30px;
 }
+.navOpen_leftBottom_right > ul{
+    list-style-type: none;
+    margin: 35px 0;
+}
+.navOpen_leftBottom_right > ul > li{
+    font-size: 0.8vw;
+    font-family: kozuka-mincho-pro;
+    letter-spacing: 3px;
+}
+
 
 /* -------------------------------------------- */
 .navOpen_right{
@@ -809,6 +820,7 @@ nav{
 .footer_bottom{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 .footer_ul{
     width: 50%;
@@ -836,7 +848,31 @@ nav{
     opacity: 0.6;
 }
 .footer_ul > li > div > p{
-    font-family: kozuka-mincho-pro;
     font-size: 1rem;
     opacity: 0.6;
+}
+.footer_remarks{
+    width: 100%;
+    height: 480px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.6;
+}
+.footer_remarks > img{
+    width: 320px;
+    margin-bottom: 50px;
+}
+.footer_remarks > p{
+    margin: 20px 0;
+}
+.footer_remarks > ul{
+    margin: 50px 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.footer_remarks > ul > li{
+    margin: 0 20px;
 }
