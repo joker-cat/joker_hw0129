@@ -8,6 +8,20 @@
     font-family: miller-banner;
     src: url('../webfonts/Miller-DisplayItalic.otf');
 }
+
+/* ---------------------------- */
+.showani{
+    animation-name: showani;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes showani{
+
+}
+/* ---------------------------- */
 /* ---------btnaniset---------- */
 /* 利用delay延遲製作邊線呈現方式 */
 .myboxani {
@@ -105,6 +119,10 @@ nav{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+#burger > span{
+    font-size: 12px;
+    margin-left: 12px;
 }
 #burger.on_off .burgerLine:nth-of-type(1){
     transform-origin: left;
@@ -247,10 +265,18 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     cursor: pointer;
     overflow: hidden;
     float: right;
     background-color: rgb(190, 88, 190);
+}
+#burger_in > span{
+    font-size: 14px;
+    margin-left: 6px;
+    margin-top: -8px;
+    color: white;
+    letter-spacing: 2px;
 }
 .burgerLine_cover_in{
     width: 40px;

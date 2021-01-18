@@ -20,6 +20,7 @@
                 <span class="burgerLine"></span>
                 <span class="burgerLine"></span>
             </div>
+            <span>open</span>
         </div>
     </nav>
     <section id="navOpen">
@@ -83,6 +84,7 @@
                     <span class="burgerLine_in"></span>
                     <span class="burgerLine_in"></span>
                 </div>
+                <span>close</span>
             </div>
         </div>
     </section>
@@ -331,6 +333,30 @@
         const burgerin = document.querySelector('#burger_in');
         let movieShow = document.querySelector('.movieShow');
         let ifr = document.querySelector('iframe');
+        let myboxani = document.querySelectorAll('.myboxani');
+
+        myboxani.forEach(el =>{
+            window.addEventListener('scroll',()=>{
+                // console.log(el.getBoundingClientRect().bottom);
+                // console.log(el.getBoundingClientRect().bottom);
+                let z = el.getBoundingClientRect().top;
+                if(z < document.documentElement.clientHeight - 15){
+                    el.style.backgroundColor = 'red'
+                }
+            })
+        })
+
+        
+
+            // console.log(window.scrollY); //滾軸滾動的距離
+            // console.log($('#info_attr').offset().top); //dom與頂部的距離
+
+            // console.log(document.querySelector('#info_attr').getBoundingClientRect().bottom);
+            // 抓取dom與視窗的距離
+            
+            // console.log(document.documentElement.clientHeight); //視窗高度
+
+
 
         //宣告全遇變數
         //先呼叫計時器
@@ -338,9 +364,6 @@
         //抓取數字對應的圖片 並顯示
         //把初始化入函式 並把被點的按鈕變黑
 
-
-        //如何讓addEventListener內也能使用
-        // var aliderArraylength = sliderdotbtnset.length;
         burgerin.addEventListener('click',()=>{
             // burgerClick.classList.toggle('on_off');
             navOpen.style.opacity = '0';
