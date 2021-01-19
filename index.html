@@ -172,15 +172,24 @@
             </div>
             <div class="sec4_img">
                 <img src="./05_img/sec4_03.jpg" alt="">
+                <div class="sec4_font">My<br>Page
+                    <p>千里金蘭大学マイページ</p>
+                </div>
             </div>
             <div class="sec4_img">
                 <img src="./05_img/sec4_04.jpg" alt="">
             </div>
             <div class="sec4_img">
                 <img src="./05_img/sec4_05.jpg" alt="">
+                <div class="sec4_font" id="sec4_font">Conference
+                    <p>進学相談会</p>
+                </div>
             </div>
             <div class="sec4_img">
                 <img src="./05_img/sec4_06.jpg" alt="">
+                <div class="sec4_font">Piano<br>Lesson
+                    <p>入学前ピアノレッスン</p>
+                </div>
             </div>
         </div>
         <ul class="sec4_sliderdot">
@@ -341,7 +350,7 @@
                 // console.log(el.getBoundingClientRect().bottom);
                 let z = el.getBoundingClientRect().top;
                 if(z < document.documentElement.clientHeight - 15){
-                    el.style.backgroundColor = 'red'
+                    el.classList.add('opcaani');
                 }
             })
         })

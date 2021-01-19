@@ -9,22 +9,11 @@
     src: url('../webfonts/Miller-DisplayItalic.otf');
 }
 
-/* ---------------------------- */
-.showani{
-    animation-name: showani;
-    animation-delay: 0.2s;
-    animation-duration: 3s;
-    animation-timing-function: ease;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-@keyframes showani{
-
-}
-/* ---------------------------- */
 /* ---------btnaniset---------- */
 /* 利用delay延遲製作邊線呈現方式 */
 .myboxani {
+    transform: translateX(-50%);
+    opacity: 0;
     position: relative;
     width: 200px;
     height: 50px;
@@ -37,7 +26,7 @@
     font-family: miller-banner, serif;
     font-weight: lighter;
     margin: 0 auto;
-    display: block;
+    display: block !important;
 }
 
 .myboxani::after {
@@ -74,7 +63,23 @@
     transition-delay: 0.3s;
 }
 /* ------------------- */
-
+.opcaani{
+    opacity: 0;
+    transform: translateX(-50%);
+    animation-name: opcaani;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0,0.21,0,0.99);
+}
+@keyframes opcaani{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{transform: translateX(0%);
+        opacity: 1;}
+}
+/* ------------------- */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -597,9 +602,33 @@ nav{
 }
 .sec4_img{
     width: calc(100% / 3);
+    position: relative;
 }
 .sec4_img > img{
     width: 100%;
+}
+.sec4_font{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    color: white;
+    line-height: 1.3;
+}
+.sec4_font > p{
+    font-size: 14px;
+    margin-top: 10px;
+}
+#sec4_font{
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: black;
+    opacity: 0.7;
+}
+#sec4_font > p{
+    margin-top: 20px;
 }
 .sec4_sliderdot{
     width: 100%;
