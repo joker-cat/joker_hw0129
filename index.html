@@ -10,6 +10,10 @@
     <title>千里金蘭大学 受験生応援サイト｜大阪府吹田市の女子大学</title>
 </head>
 
+<!-- 記得要惡補設計！！！！！！！ -->
+<!-- 網頁排版功課 -->
+<!-- 設計按鈕功課 -->
+
 <body>
     <nav>
         <p class="navFont">千里金蘭大学 受験生応援サイト</p>
@@ -104,11 +108,11 @@
                 <div class="sec1Slider_imgset" data-slick-index="4"></div>
             </div>
             <ul class="sliderdot">
-                <li><button class="sliderdot_btnset">A</button></li>
-                <li><button class="sliderdot_btnset">B</button></li>
-                <li><button class="sliderdot_btnset">C</button></li>
-                <li><button class="sliderdot_btnset">D</button></li>
-                <li><button class="sliderdot_btnset">E</button></li>
+                <li><button class="sliderdot_btnset"></button></li>
+                <li><button class="sliderdot_btnset"></button></li>
+                <li><button class="sliderdot_btnset"></button></li>
+                <li><button class="sliderdot_btnset"></button></li>
+                <li><button class="sliderdot_btnset"></button></li>
             </ul>
             <div id="sec1Center_font">
                 <p>
@@ -193,12 +197,12 @@
             </div>
         </div>
         <ul class="sec4_sliderdot">
-            <li><button class="sec4_sliderdot_btnset">A</button></li>
-            <li><button class="sec4_sliderdot_btnset">B</button></li>
-            <li><button class="sec4_sliderdot_btnset">C</button></li>
-            <li><button class="sec4_sliderdot_btnset">D</button></li>
-            <li><button class="sec4_sliderdot_btnset">E</button></li>
-            <li><button class="sec4_sliderdot_btnset">F</button></li>
+            <li><button class="sec4_sliderdot_btnset"></button></li>
+            <li><button class="sec4_sliderdot_btnset"></button></li>
+            <li><button class="sec4_sliderdot_btnset"></button></li>
+            <li><button class="sec4_sliderdot_btnset"></button></li>
+            <li><button class="sec4_sliderdot_btnset"></button></li>
+            <li><button class="sec4_sliderdot_btnset"></button></li>
         </ul>
     </section>
     <section id="sec5">
@@ -344,26 +348,26 @@
         let ifr = document.querySelector('iframe');
         let myboxani = document.querySelectorAll('.myboxani');
 
-        myboxani.forEach(el =>{
-            window.addEventListener('scroll',()=>{
+        myboxani.forEach(el => {
+            window.addEventListener('scroll', () => {
                 // console.log(el.getBoundingClientRect().bottom);
                 // console.log(el.getBoundingClientRect().bottom);
                 let z = el.getBoundingClientRect().top;
-                if(z < document.documentElement.clientHeight - 15){
+                if (z < document.documentElement.clientHeight - 15) {
                     el.classList.add('opcaani');
                 }
             })
         })
 
-        
 
-            // console.log(window.scrollY); //滾軸滾動的距離
-            // console.log($('#info_attr').offset().top); //dom與頂部的距離
 
-            // console.log(document.querySelector('#info_attr').getBoundingClientRect().bottom);
-            // 抓取dom與視窗的距離
-            
-            // console.log(document.documentElement.clientHeight); //視窗高度
+        // console.log(window.scrollY); //滾軸滾動的距離
+        // console.log($('#info_attr').offset().top); //dom與頂部的距離
+
+        // console.log(document.querySelector('#info_attr').getBoundingClientRect().bottom);
+        // 抓取dom與視窗的距離
+
+        // console.log(document.documentElement.clientHeight); //視窗高度
 
 
 
@@ -373,50 +377,53 @@
         //抓取數字對應的圖片 並顯示
         //把初始化入函式 並把被點的按鈕變黑
 
-        burgerin.addEventListener('click',()=>{
+        burgerin.addEventListener('click', () => {
             // burgerClick.classList.toggle('on_off');
             navOpen.style.opacity = '0';
             navOpen.style.zIndex = '-1';
         })
 
+
+        // --------------------崩潰區-(幹終於解決了)---------------------
         sliderdotbtnset[0].style.backgroundColor = 'black'
-        var tt = function () {
-            setInterval(() => {
-
-                sec1Sliderimgset.forEach((imgclick, index) => {
-                    sliderdotbtnset[index].style.backgroundColor = 'white';
-                    if ($(imgclick).hasClass('slick-active')) {
-                        console.log(index);
-                        sliderdotbtnset[index].style.backgroundColor = 'black';
-                    }
-                })
-            }, 5000);
-        }
-
-
         sliderdotbtnset.forEach((btnclick, index) => {
             //按鈕事件
-            btnclick.addEventListener('click', (btn,ii) => {
+            btnclick.addEventListener('click', (btn, ii) => {
                 $('.autoplay').slick('slickGoTo', index);
                 for (var a = 0; a <= 4; a++) {
                     sliderdotbtnset[a].style.backgroundColor = 'white';
                 }
                 sliderdotbtnset[index].style.backgroundColor = 'black';
-                clearTimeout(tt);
-                tt();
             })
         })
-        tt();
+        $('.autoplay').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            console.log(nextSlide);
+            for (var a = 0; a <= 4; a++) {
+                    sliderdotbtnset[a].style.backgroundColor = 'white';
+                }
+            sliderdotbtnset[nextSlide].style.backgroundColor = 'black';
 
+        });
 
+        $('.sec4_container').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            console.log(nextSlide);
+            for (var b = 0; b <= 5; b++) {
+                    sec4_sliderdotbtnset[b].style.backgroundColor = 'white';
+                }
+                sec4_sliderdotbtnset[nextSlide].style.backgroundColor = 'black';
+        });
 
+        // setInterval(() => {
+        //     sec1Sliderimgset.forEach((imgclick, index) => {
+        //         sliderdotbtnset[index].style.backgroundColor = 'white';
+        //         if ($(imgclick).hasClass('slick-active')) {
+        //             // console.log(index);
+        //             sliderdotbtnset[index].style.backgroundColor = 'black';
+        //         }
+        //     })
+        // }, 5000); 
 
-
-
-
-
-
-
+        // -----------------------------------------------
 
 
 
@@ -448,12 +455,13 @@
             navOpen.style.zIndex = '9999';
         })
 
+
         $('.autoplay').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
             autoplay: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed: 3000,
             pauseOnFocus: false,
             pauseOnHover: false,
         });
@@ -467,6 +475,7 @@
             pauseOnHover: false,
             centerMode: true,
         });
+
     </script>
 
 </body>
