@@ -1,0 +1,80 @@
+@media screen and (max-width: 1280px) {
+    #sec1Center_font {
+        right: 15px;
+        bottom: 10%;
+    }
+    #sec1Center_font > h2{
+        font-size: 2.5vw;
+    }
+    .play_logo {
+        top: 50%;
+    }
+    .sec4_font {
+        font-size: 3vw;
+        line-height: 1.2;
+        top: 10%;
+    }
+    #sec4_font {
+        font-size: 3vw;
+    }
+    .sec6_conset > div {
+        position: absolute;
+        padding: 30px 40px;
+    }
+    .sec6_conset > div > p {
+        font-size: 3vw;
+        color: rgb(0, 0, 0);
+    }
+    .sec6_conset > div > ruby {
+        font-style: 2.2vw;
+        color: rgb(0, 0, 0);
+    }
+    #sec6 {
+        width: 75%;
+        margin: auto;
+    }
+    .sec6_con {
+        height: 1200px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    #sec6_con1,#sec6_con3{
+        width: 100%;
+    }
+    #sec6_con2{
+        width: 50%;
+        height: 50%;
+    }
+    .sec6_conset{
+        width: 50%;
+    }
+    #sec6_con1_bottom {
+        margin-left: auto;
+    }
+    #sec6_con3_top{
+        margin-left: auto;
+    }
+    #sec6_con1_top, #sec6_con3_top {
+        margin-bottom: 0px;
+    }
+    .sec6_conset:nth-child(1) > div {
+        right: -100%;
+    }
+    .sec6_conset:nth-child(2) > div {
+        left: -100%;
+    }
+    #sec6_con2 > div {
+        right: -70%;
+    }
+    #sec6_con3 > .sec6_conset:nth-child(1) > div{
+        right: 0;
+        left: -75%;
+    }
+    #sec6_con3 > .sec6_conset:nth-child(2) > div{
+        left: 100%;
+    }
+    .sec7_con {
+        width: 75%;
+    }
+}

@@ -8,7 +8,9 @@
     font-family: miller-banner;
     src: url('../webfonts/Miller-DisplayItalic.otf');
 }
-
+html{
+    scroll-behavior: smooth;
+}
 /* ---------btnaniset---------- */
 /* 利用delay延遲製作邊線呈現方式 */
 .myboxani {
@@ -343,6 +345,35 @@ nav{
     justify-content: center;
     align-items: center;
 }
+.gototop{
+    position: fixed;
+    right: 2.1vw;
+    width: 10px;
+    height: 55px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    transform: scale(0.5);
+    animation-name: gototop;
+    animation-duration: 1.5s;
+    animation-iteration-count:infinite;
+    animation-timing-function: cubic-bezier(0,0.21,0,0.99);
+}
+.gototop::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -10px;
+    top: -12px;
+    width: 28px;
+    height: 28px;
+    transform: rotate(45deg);
+    border-top:1px solid black ;
+    border-left:1px solid black ;
+}
+@keyframes gototop{
+    0%{bottom: 0}
+    100%{bottom: 60px}
+}
 .sec1Center{
     width: 90%;
     height: 93%;
@@ -387,11 +418,11 @@ nav{
 }
 
 .sliderdot_btnset{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     margin: 0 10px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 0px solid black;
 }
 .sec1Left_fixed > .follow_us{
     writing-mode: vertical-lr;
@@ -403,6 +434,24 @@ nav{
 .iconMarrign{
     margin: 20px 0;
     transform: translateY(-40px);
+    position: relative;
+}
+.icon::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.icon:nth-child(2):hover{
+    color: #1da1f2;
+}
+.icon:nth-child(3):hover{
+    color: #ec1f1f;
+}
+.icon:nth-child(4):hover{
+    color: #3ff183;
 }
 .sec1Right_fixed_fontset{
     writing-mode: vertical-lr;
@@ -477,7 +526,7 @@ nav{
 }
 .movieShow_cover{
     width: 70%;
-    height: 80%;
+    height: 40vw;
 }
 
 /* --------------sec3--------------- */
@@ -519,10 +568,17 @@ nav{
     height: 500px;
     margin-bottom: 60px;
     position: relative;
-    transition: 1s;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: 1.4s;
+    opacity: 0;
+    transform: translateY(50px);
+    
+}
+.sec3_bigimg:hover{
+    transform:scale(1.05) !important;
+    /* 權重問題 */
 }
 
 /* -------此處有雷nth-of-type(1)nth-of-type(2)失效------- */
@@ -536,7 +592,7 @@ nav{
 }
 /* ------------------------------------------------- --- */
 .sec3_bigimg_font{
-    width: 25%;
+    /* width: 25%; */
     height: 300px;
     position: absolute;
     top: 16%;
@@ -567,9 +623,7 @@ nav{
     font-size: 1rem;
     letter-spacing: 5px;
 }
-.sec3_bigimg:hover{
-    transform:scale(1.05);
-}
+
 
 .sec3_smellimg{
     display: block;
@@ -588,12 +642,12 @@ nav{
 /* ---------------sec4----------------- */
 #sec4{
     width: 90%;
-    height: 500px;
+    /* height: 500px; */
     margin: 0 auto;
     padding-top: 150px;
     background-color: white;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .sec4_container{
     width: 100%;
@@ -603,17 +657,20 @@ nav{
 }
 .sec4_img{
     width: calc(100% / 3);
+    margin: 0 2px;
     position: relative;
 }
 .sec4_img > img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .sec4_font{
     position: absolute;
     top: 0;
     left: 20px;
-    font-size: 4rem;
-    letter-spacing: 5px;
+    font-size: 3.4vw;
+    letter-spacing: 2px;
     color: white;
     line-height: 1.3;
 }
@@ -624,7 +681,7 @@ nav{
 #sec4_font{
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3rem;
+    font-size: 3.4vw;
     color: black;
     opacity: 0.7;
 }
@@ -636,17 +693,17 @@ nav{
     list-style-type: none;
     display: block;
     position: absolute;
-    bottom: 30px;
+    bottom: -80px;
     display: flex;
     justify-content: center;
 }
 .sec4_sliderdot_btnset{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     margin: 0 10px;
     border-radius: 50%;
-    border: 1px solid black;
-    background-color: transparent;
+    border: 0px solid #000000;
+    background-color: #cbc0c0;
 }
 
 /* -------------sec5-------------- */
@@ -665,6 +722,9 @@ nav{
     background-color: tomato;
     margin-bottom: 100px;
     display: flex;
+    transition: 1.4s;
+    opacity: 0;
+    transform: translateY(50px);
 }
 .sec5_con2{
     margin-bottom: 0;
@@ -733,8 +793,11 @@ nav{
 .sec6_con{
     width: 100%;
     height: 500px;
+    transition: 1.4s;
     display: flex;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(100px);
 }
 #sec6_con1,#sec6_con2,#sec6_con3{
     width: calc(100% / 3);
@@ -744,6 +807,7 @@ nav{
 #sec6_con2{
     margin: 0 3px;
     background-image: url('../05_img/sec6_03.jpg');
+    position: relative;
 }
 .sec6_conset{
     width: 100%;
@@ -751,6 +815,7 @@ nav{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 .sec6_conset::before{
     content: '';
@@ -764,6 +829,12 @@ nav{
 .sec6_conset:hover:before{
     background-color: rgba(141, 169, 207, 0.7);
 }
+.sec6_conset > div{position: absolute;padding: 30px 80px;}
+.sec6_conset:nth-child(1) > div{right: 0;bottom: 0;}
+.sec6_conset:nth-child(2) > div{left: 0;bottom: 0;}
+.sec6_conset > div > p{font-size: 2vw; color: white; margin-bottom: 10px;}
+.sec6_conset > div > ruby{font-size: 1vw; color: white;}
+#sec6_con2 > div{left: unset;right: 0;bottom: 0;}
 #sec6_con1_top{background-image: url('../05_img/sec6_01.jpg');}
 #sec6_con1_bottom{background-image: url('../05_img/sec6_02.jpg');}
 #sec6_con3_top{background-image: url('../05_img/sec6_04.jpg');}
@@ -784,6 +855,9 @@ nav{
     margin: 0 auto 100px auto;
     background-color: white;
     display: flex;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 1.4s;
 }
 .sec7_con_left{
     width: 25%;
@@ -826,19 +900,46 @@ nav{
     opacity: 0.5;
 }
 .sec7_con_rightFontset:nth-of-type(1){
+    opacity: 0;
+    transform: translateX(-500px);
     margin-left: 40%;
+    animation-delay: 0.3s;
 }
 .sec7_con_rightFontset:nth-of-type(2){
+    opacity: 0;
+    transform: translateX(-500px);
     margin-left: 32%;
+    animation-delay: 0.4s;
 }
 .sec7_con_rightFontset:nth-of-type(3){
+    opacity: 0;
+    transform: translateX(-500px);
     margin-left: 24%;
+    animation-delay: 0.5s;
 }
 .sec7_con_rightFontset:nth-of-type(4){
+    opacity: 0;
+    transform: translateX(-500px);
     margin-left: 16%;
+    animation-delay: 0.6s;
 }
 .sec7_con_rightFontset:nth-of-type(5){
+    opacity: 0;
+    transform: translateX(-500px);
     margin-left: 8%;
+    animation-delay: 0.7s;
+}
+.sec7_con_rightFontset.showsec7{
+    animation-name: showsec7;
+    animation-duration: 0.6s;
+    /* animation-delay: 0.2s; */
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0,0.21,0,0.99);
+}
+@keyframes showsec7{
+    0%{transform: translateX(-500px);opacity: 0;}
+    100%{transform: translateX(0px);opacity: 1;}
 }
 .sec7_btn{
     width: 300px;
