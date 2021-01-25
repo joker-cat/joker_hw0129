@@ -1,6 +1,9 @@
 @media screen and (max-width: 1280px) {
+    .burgerLine{
+        margin:8px 4px;
+    }
     #sec1Center_font {
-        right: 15px;
+        right: 62%;
         bottom: 10%;
     }
     #sec1Center_font > h2{
@@ -16,6 +19,25 @@
     }
     #sec4_font {
         font-size: 3vw;
+    }
+    .sec5_p{
+        font-size: 1.4vw;
+        padding: 0 35px;
+    }
+    .sec5_con1, .sec5_con2{
+        flex-direction: column;
+        height: 1000px;
+    }
+    .sec5_con1_right, .sec5_con2_left{
+        width: 100%;
+        padding-top: 0px;
+    }
+    .sec5_con1_left, .sec5_con2_right{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .sec5_con2 > .sec5_con2_left{
+        order: 1;
     }
     .sec6_conset > div {
         position: absolute;

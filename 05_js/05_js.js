@@ -4,22 +4,33 @@ $('.gototop').click(function () {
 })
 const burgerClick = document.querySelector('#burger');
 const navOpen = document.querySelector('#navOpen');
+const navhoverbg = document.querySelectorAll('.navhover_bg');
+const hoverLi = document.querySelectorAll('.hoverLi');
 const sec1Sliderimgset = document.querySelectorAll('.sec1Slider_imgset')
 const sliderdotbtnset = document.querySelectorAll('.sliderdot_btnset');
 const sec4_sliderdotbtnset = document.querySelectorAll('.sec4_sliderdot_btnset');
 const playlogo = document.querySelector('.play_logo');
 const burgerin = document.querySelector('#burger_in');
-let movieShow = document.querySelector('.movieShow');
-let ifr = document.querySelector('iframe');
-let myboxani = document.querySelectorAll('.myboxani');
-let sec3bigimg = document.querySelectorAll('.sec3_bigimg');
 const sec5con1 = document.querySelector('.sec5_con1');
 const sec5con2 = document.querySelector('.sec5_con2');
 const sec6con = document.querySelector('.sec6_con');
 const sec7con = document.querySelector('.sec7_con');
 const sec7con_rightFontset = document.querySelectorAll('.sec7_con_rightFontset');
+let movieShow = document.querySelector('.movieShow');
+let ifr = document.querySelector('iframe');
+let myboxani = document.querySelectorAll('.myboxani');
+let sec3bigimg = document.querySelectorAll('.sec3_bigimg');
 
 
+hoverLi.forEach((el,index) =>{
+    el.addEventListener('mouseenter',()=>{
+        console.log(index);
+        for (let arr = 0; arr < 5; arr++) {
+            navhoverbg[arr].classList.remove('hoverShow');
+        }
+        navhoverbg[index].classList.add('hoverShow');
+    })
+})
 
 window.addEventListener('scroll', () => {
     let z = sec7con.getBoundingClientRect().top;
