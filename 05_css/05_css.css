@@ -198,7 +198,9 @@ nav{
     height: calc(100% - 200px);
     display: flex;
 }
-
+.navOpen_left > #burger_in{
+    display: none;
+}
 /*-------------- navOpen_leftBottom_left-------------- */
 .navOpen_leftBottom_left{
     width: 50%;
