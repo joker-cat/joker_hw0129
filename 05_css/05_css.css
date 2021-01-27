@@ -201,6 +201,11 @@ nav{
 .navOpen_left > #burger_in{
     display: none;
 }
+.navOpen_right > #burger_in1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*-------------- navOpen_leftBottom_left-------------- */
 .navOpen_leftBottom_left{
     width: 50%;
@@ -268,7 +273,7 @@ nav{
 }
 
 /* -------------------------------------- */
-#burger_in{
+#burger_in,#burger_in1{
     width: 80px;
     height: 80px;
     display: flex;
@@ -281,6 +286,13 @@ nav{
     background-color: rgb(190, 88, 190);
 }
 #burger_in > span{
+    font-size: 14px;
+    margin-left: 6px;
+    margin-top: -8px;
+    color: white;
+    letter-spacing: 2px;
+}
+#burger_in1 > span{
     font-size: 14px;
     margin-left: 6px;
     margin-top: -8px;
@@ -310,6 +322,23 @@ nav{
     width: 80%;
 }
 #burger_in.on_off .burgerLine_in:nth-of-type(3){
+    transform-origin: left;
+    transform: rotate(-45deg);
+    width: 80%;
+    margin-left: 10px;
+}
+
+#burger_in1.on_off .burgerLine_in:nth-of-type(1){
+    transform-origin: left;
+    transform: rotate(45deg);
+    width: 80%;
+    margin-left: 10px;
+}
+#burger_in1.on_off .burgerLine_in:nth-of-type(2){
+    transform: translate(150%);
+    width: 80%;
+}
+#burger_in1.on_off .burgerLine_in:nth-of-type(3){
     transform-origin: left;
     transform: rotate(-45deg);
     width: 80%;

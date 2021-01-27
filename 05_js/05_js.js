@@ -11,6 +11,7 @@ const sliderdotbtnset = document.querySelectorAll('.sliderdot_btnset');
 const sec4_sliderdotbtnset = document.querySelectorAll('.sec4_sliderdot_btnset');
 const playlogo = document.querySelector('.play_logo');
 const burgerin = document.querySelector('#burger_in');
+const burgerin1 = document.querySelector('#burger_in1');
 const sec5con1 = document.querySelector('.sec5_con1');
 const sec5con2 = document.querySelector('.sec5_con2');
 const sec6con = document.querySelector('.sec6_con');
@@ -131,7 +132,11 @@ burgerin.addEventListener('click', () => {
     navOpen.style.opacity = '0';
     navOpen.style.zIndex = '-1';
 })
-
+burgerin1.addEventListener('click', () => {
+    // burgerClick.classList.toggle('on_off');
+    navOpen.style.opacity = '0';
+    navOpen.style.zIndex = '-1';
+})
 
 // --------------------崩潰區-(幹終於解決了)---------------------
 sliderdotbtnset[0].style.backgroundColor = 'black';

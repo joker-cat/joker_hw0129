@@ -10,6 +10,13 @@
     }
     .navOpen_left{
         width: 100%;
+        padding: 50px 100px 0 100px;
+    }
+    .navOpen_left_top {
+        height: 150px;
+    }
+    .navOpen_leftBottom_left > div {
+        position: static;
     }
     .navOpen_right > #burger_in{
         display: none;
@@ -28,14 +35,17 @@
         font-size: 2.5vw;
     }
     .navOpen_leftBottom_left > ul > li {
-        font-size: 1.8vw;
+        font-size: 1.4vw;
         margin: 35px 0;
     }
     .navOpen_leftBottom_right > ul > li {
-        font-size: 1.5vw;
+        font-size: 1.2vw;
     }
     .play_logo {
         top: 50%;
+    }
+    .sec3_bigimg_font {
+        left: 15%;
     }
     .sec4_font {
         font-size: 3vw;
@@ -136,12 +146,19 @@
         width: 75%;
         margin: 0 auto;
     }
+    .sec7_con_rightFontset:hover{
+        background-color: rgba(255, 235, 205, 0.2);
+        transform: scale(1.05) !important;
+    }
     .sec7_con_rightFontset:nth-of-type(1),
     .sec7_con_rightFontset:nth-of-type(2),
     .sec7_con_rightFontset:nth-of-type(3),
     .sec7_con_rightFontset:nth-of-type(4),
     .sec7_con_rightFontset:nth-of-type(5){
         margin-left: 0;
+    }
+    .footer_ul {
+        width: 70%;
     }
 }
 
@@ -174,6 +191,12 @@
         letter-spacing: 12px;
         line-height: 1.1;
     }
+    .sec3_bigimg_font > p:nth-child(1) {
+        margin-bottom: 30px;
+    }
+    .sec3_bigimg_font > p:nth-child(2)::before {
+        top: 80px;
+    }
     .sec4_font {
         font-size: 4vw;
     }
@@ -195,6 +218,13 @@
         width: 100%;
         margin-bottom: 20px;
     }
+    #sec6_con3 {
+        display: flex;
+        flex-direction: column;
+    }
+    #sec6_con3_top {
+        order: 1;
+    }
     .sec6_conset:nth-child(1) > div {
         right: 0;
         font-size: 3vw;
@@ -202,6 +232,12 @@
     .sec6_conset:nth-child(2) > div {
         left: 0;
         bottom: 10px;
+    }
+    .sec6_conset > div > p {
+        font-size: 4vw;
+    }
+    .sec6_conset > div > ruby {
+        font-size: 2vw;
     }
     #sec6_con2 > div {
         right: 0;
