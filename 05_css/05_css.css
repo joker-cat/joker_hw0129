@@ -476,6 +476,9 @@ nav{
     font-size: 1.2rem;
     margin-bottom: 30px;
     transform: translateY(-40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .iconMarrign{
     margin: 20px 0;
@@ -503,10 +506,12 @@ nav{
     writing-mode: vertical-lr;
     letter-spacing: 3px;
     font-size: 1rem;
-    border-bottom: 1px solid black;
     margin: 10px 0;
     padding: 20px 0;
     transform: translateY(-40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #sec1Center_font{
     width: 28.5vw;
